@@ -16,10 +16,10 @@ public class ExecCmd {
         ChannelExec channelExec = null;
         try {
             channelExec = (ChannelExec) SchUnitJsch.getChannel("exec");
-            channelExec.setCommand("su www");
+            channelExec.setCommand("su lucky");
             channelExec.connect();
             OutputStream out = channelExec.getOutputStream();
-            out.write("moseeker.com\n".getBytes());
+            out.write("123456\n".getBytes());
             out.flush();
             out.write(command.getBytes());
             out.flush();
@@ -66,14 +66,4 @@ public class ExecCmd {
         return null;
     }
 
-    public static void main(String[] args) {
-//        try (BufferedReader reader = new BufferedReader(new InputStreamReader(ExecCmd.executeCommandToIn("tail -f /www/alphadog/log/mq_dev1.log"), Charset.forName("UTF-8")))) {
-//            String buf;
-//            while ((buf = reader.readLine()) != null) {
-//                System.out.println(buf);
-//            }
-//        } catch (Exception e1) {
-//            e1.printStackTrace();
-//        }
-    }
 }
